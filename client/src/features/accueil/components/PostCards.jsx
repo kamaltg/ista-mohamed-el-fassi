@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 function PostCards({ posts }) {
   return (
-    <div className="relative">
+    <div className="relative select-none">
       <Swiper
         keyboard={{ enabled: true }}
         breakpoints={{
@@ -22,10 +22,10 @@ function PostCards({ posts }) {
           clickable: true,
         }}
         modules={[Keyboard, Navigation, Pagination]}
-        className="!px-14 !py-5 !pb-10 select-none" // push down the swiper content for pagination
+        className="recentPosts !pb-10 sm:!px-14 sm:!py-5" // push down the swiper content for pagination
       >
         {posts.map((post, index) => (
-          <SwiperSlide key={`post-${index}`}>
+          <SwiperSlide key={`post-${index}`} className="!max-w-80">
             <RecentPost post={post} />
           </SwiperSlide>
         ))}

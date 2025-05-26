@@ -11,38 +11,40 @@
   }
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  width: 50px !important;
-  min-height: 100% !important;
+.recentPosts {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 50px !important;
+    min-height: 100% !important;
 
-  top: 0 !important;
-  bottom: 0 !important;
-}
+    top: 0 !important;
+    bottom: 0 !important;
+  }
 
-.swiper-button-next {
-  background: #ededed;
-  background: linear-gradient(
-    -90deg,
-    rgba(220, 220, 220, 0.3) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  .swiper-button-next {
+    background: #ededed;
+    background: linear-gradient(
+      -90deg,
+      rgba(220, 220, 220, 0.3) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
 
-  right: 0 !important;
-}
+    right: 0 !important;
+  }
 
-.swiper-button-prev {
-  background: #ededed;
-  background: linear-gradient(
-    90deg,
-    rgba(220, 220, 220, 0.3) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  .swiper-button-prev {
+    background: #ededed;
+    background: linear-gradient(
+      90deg,
+      rgba(220, 220, 220, 0.3) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
 
-  left: 0 !important;
-}
+    left: 0 !important;
+  }
 
-.swiper-button-prev.swiper-button-disabled,
-.swiper-button-next.swiper-button-disabled {
-  background: transparent;
+  .swiper-button-prev.swiper-button-disabled,
+  .swiper-button-next.swiper-button-disabled {
+    background: transparent;
+  }
 }

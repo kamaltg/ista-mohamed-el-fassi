@@ -1,104 +1,96 @@
-import useMediaQuery from "@/hooks/useMediaQuery";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Autoplay, Keyboard, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { motion } from "framer-motion";
-import { useCallback, useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useRef, useState } from "react";
 
-// TODO: make this SEO optimized (aria)
-// TODO: make scrollabel by touch in phones (swiper)
-// TODO: migrate this to use Swiper
-// TODO: Think about make it replacable with a video instead
-
-function Carousel({ slides }) {
-  const [current, setCurrent] = useState(0);
-  const matches = useMediaQuery("(width >= 40rem)");
-
-  const previousSlide = useCallback(() => {
-    if (current === 0) setCurrent(slides.length - 1);
-    else setCurrent(current - 1);
-  }, [current, slides]);
-
-  const nextSlide = useCallback(() => {
-    if (current === slides.length - 1) setCurrent(0);
-    else setCurrent(current + 1);
-  }, [current, slides]);
-
-  useEffect(() => {
-    const nextSlideInterval = setInterval(nextSlide, 5000);
-    return () => clearInterval(nextSlideInterval);
-  }, [nextSlide]);
+export default function Carousel({ slides }) {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="relative isolate max-h-150 w-full overflow-hidden">
-      {/* Title and excerpt */}
-      <motion.div
-        key={current}
-        initial={{ x: -50 }}
-        animate={{ x: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="bg-blue absolute top-1/2 left-0 z-1 h-fit w-fit -translate-y-1/2 px-12 py-8 pl-30 text-white shadow-xl/50 md:w-1/2">
-        <motion.h3
-          initial={{ x: -10, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="text-2xl font-bold sm:text-4xl">
-          {slides[current].title}
-        </motion.h3>
-        <motion.p
-          initial={{ x: -10, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="mt-6 line-clamp-3 hidden text-sm text-white/50 md:text-lg lg:line-clamp-6">
-          {slides[current].content}
-        </motion.p>
-      </motion.div>
-
-      {/* Images */}
-      <div
-        className="flex transition duration-800 ease-out"
-        style={{ transform: `translateX(${-current * 100}%)` }}>
+    <div className="relative isolate h-[400px] overflow-hidden select-none md:h-[500px] lg:h-[600px]">
+      <Swiper
+        keyboard={{ enabled: true }}
+        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+        modules={[Navigation, Pagination, Autoplay, Keyboard]}
+        loop={true}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        onBeforeInit={(swiper) => {
+          swiper.params.navigation.prevEl = prevRef.current;
+          swiper.params.navigation.nextEl = nextRef.current;
+        }}
+        className="h-full w-full">
         {slides.map((slide, index) => (
-          <img
-            className="h-full w-full object-cover"
-            key={`slide-${index}`}
-            src={slide.image}
-          />
+          <SwiperSlide key={`slide-${index}`}>
+            <div className="relative h-full w-full">
+              <img
+                className="h-full w-full object-cover"
+                src={slide.image}
+                alt={slide.title}
+              />
+              <AnimatePresence>
+                {index === activeIndex && (
+                  <motion.div
+                    key={`motion-${index}`}
+                    initial={{ x: -50, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -50, opacity: 0 }}
+                    transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+                    className="bg-blue absolute top-1/2 left-0 h-fit w-fit -translate-y-1/2 px-12 py-8 text-white shadow-xl/50 md:w-1/2 md:pl-30">
+                    <motion.h3
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 0.5 }}
+                      className="text-2xl font-bold sm:text-4xl">
+                      {slide.title}
+                    </motion.h3>
+                    <motion.p
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 0.8 }}
+                      className="mt-6 line-clamp-3 hidden text-sm text-white/50 md:text-lg lg:line-clamp-6">
+                      {slide.content}
+                    </motion.p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </SwiperSlide>
         ))}
-      </div>
 
-      {/* Control left and right buttons */}
-      <div className="absolute top-0 z-2 flex h-full w-full items-center justify-between px-10 text-2xl">
-        <button
-          aria-label="previous slide"
-          onClick={previousSlide}
-          className="bg-gray h-12 w-12 cursor-pointer rounded-full text-black hover:bg-white">
-          <FontAwesomeIcon icon={faChevronLeft} />
-        </button>
-        <button
-          aria-label="next slide"
-          onClick={nextSlide}
-          className="bg-gray h-12 w-12 cursor-pointer rounded-full text-black hover:bg-white">
-          <FontAwesomeIcon icon={faChevronRight} />
-        </button>
-      </div>
-
-      {/* Pagination */}
-      {matches && (
-        <div className="absolute bottom-0 z-3 flex w-full items-center justify-center gap-5 py-4">
-          {slides.map((slide, index) => (
-            <button
-              onClick={() => setCurrent(index)}
-              aria-label={`slide number ${index}`}
-              key={`slide-${index}`}
-              className={`${index == current ? "bg-white" : "bg-gray"} h-3 w-3 cursor-pointer rounded-full`}></button>
-          ))}
+        {/* Custom Navigation Buttons */}
+        <div className="absolute top-0 z-2 hidden h-full w-full items-center justify-between px-10 text-2xl md:flex">
+          <button
+            ref={prevRef}
+            aria-label="previous slide"
+            className="bg-gray h-12 w-12 rounded-full text-black hover:bg-white">
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </button>
+          <button
+            ref={nextRef}
+            aria-label="next slide"
+            className="bg-gray h-12 w-12 rounded-full text-black hover:bg-white">
+            <FontAwesomeIcon icon={faChevronRight} />
+          </button>
         </div>
-      )}
+      </Swiper>
     </div>
   );
 }
-
-export default Carousel;

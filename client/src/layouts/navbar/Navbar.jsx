@@ -1,4 +1,5 @@
 import LogoHorizontal from "@/components/logo/LogoHorizontal";
+import LogoVertical from "@/components/logo/LogoVertical";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import Container from "@/layouts/Container";
 import DesktopNavLinks from "@/layouts/navbar/DesktopNavLinks";
@@ -10,6 +11,7 @@ import { useEffect, useState } from "react";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const isDesktop = useMediaQuery("(width >= 64rem)");
+  const isVeryNarrow = useMediaQuery("(width <= 400px)");
 
   useEffect(() => {
     if (isDesktop) {
@@ -21,7 +23,7 @@ function Navbar() {
     <nav>
       <Container>
         <div className="flex items-center justify-between gap-4 py-6">
-          <LogoHorizontal />
+          {isVeryNarrow ? <LogoVertical /> : <LogoHorizontal />}
           {isDesktop && <DesktopNavLinks />}
 
           {!isDesktop && (

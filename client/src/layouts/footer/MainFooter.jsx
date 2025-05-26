@@ -6,8 +6,8 @@ function MainFooter() {
   return (
     <section className="bg-blue py-14 text-white">
       <Container>
-        <div className="divide-gray grid grid-cols-2 gap-4 divide-x-1 divide-dashed md:grid-cols-3">
-          <div className="col-span-full mb-8 flex w-full items-center justify-center border-0 md:col-span-1 md:mb-0 md:border-r-1">
+        <div className="divide-gray grid grid-cols-2 gap-4 space-y-8 divide-x-1 divide-dashed max-[400px]:grid-cols-1 max-[400px]:divide-none md:grid-cols-3">
+          <div className="col-span-full flex h-full w-full items-center justify-center border-0 md:col-span-1 md:mb-0 md:border-r-1">
             <div className="max-w-fit">
               <div className="mb-4 border-b border-dashed pb-4">
                 <LogoVertical height={64} />
@@ -18,7 +18,7 @@ function MainFooter() {
             </div>
           </div>
 
-          <div className="flex justify-center md:items-center">
+          <div className="flex h-full min-[400px]:justify-center md:items-center">
             <div className="text-left">
               <div className="mb-7 w-fit">
                 <h4 className="text-lg font-medium">Liens utiles</h4>
@@ -49,7 +49,7 @@ function MainFooter() {
             </div>
           </div>
 
-          <div className="flex justify-center md:items-center">
+          <div className="flex h-full min-[400px]:justify-center md:items-center">
             <div className="text-left">
               <div className="mb-7 w-fit">
                 <h4 className="text-lg font-medium">Contacts</h4>
