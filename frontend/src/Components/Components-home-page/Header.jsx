@@ -163,7 +163,7 @@ function NavBar() {
         <li
           className={
             PathMaintenant.pathname == "/"
-              ? "flex items-center gap-2 cursor-pointer  border-b-orange-500 border-b-2"
+              ? "flex items-center gap-2 cursor-pointer  border-b-orange-500 border-b-3 pb-1"
               : "flex items-center gap-2 cursor-pointer"
           }>
           <img
@@ -180,7 +180,7 @@ function NavBar() {
         <li
           className={
             PathMaintenant.pathname.indexOf("nos-connaitre") !== -1
-              ? "relative cursor-pointer border-b-orange-500 border-b-2"
+              ? "relative cursor-pointer border-b-orange-500 border-b-3 pb-1"
               : "relative cursor-pointer "
           }
           ref={nosConnaitreRef}>
@@ -280,7 +280,7 @@ function NavBar() {
         <li
           className={
             PathMaintenant.pathname.indexOf("Formation") !== -1
-              ? "relative cursor-pointer border-b-orange-500 border-b-2"
+              ? "relative cursor-pointer border-b-orange-500 border-b-3 pb-1"
               : "relative cursor-pointer "
           }
           ref={formationsRef}>
@@ -327,7 +327,7 @@ function NavBar() {
         <li
           className={
             PathMaintenant.pathname.indexOf("ACTUALITES") !== -1
-              ? "relative cursor-pointer border-b-orange-500 border-b-2"
+              ? "relative cursor-pointer border-b-orange-500 border-b-3 pb-1"
               : "relative cursor-pointer "
           }
           ref={annoncesRef}>

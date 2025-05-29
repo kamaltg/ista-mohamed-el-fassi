@@ -95,20 +95,39 @@ const ContentGenerale = ({ newsItem }) => {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-          {newsItem.attachments && newsItem.attachments.length > 0 && (
-            <div className="mb-6 md:mb-0">
-              <h3 className="text-lg font-bold text-gray-800 mb-3">
-                <span className="border-b-4 border-[#004a93] pb-1">Piè</span>ces
-                Jointes
-              </h3>
-              {newsItem.attachments
-                .filter((file) => {
+          {(() => {
+            const nonImageFiles = newsItem.attachments
+              ? newsItem.attachments.filter((file) => {
                   const ext = file.path.split(".").pop().toLowerCase();
                   return !["jpg", "jpeg", "png", "gif", "svg", "webp"].includes(
                     ext,
                   );
                 })
-                .map((file, index) => (
+              : [];
+
+            if (nonImageFiles.length === 0) {
+              return (
+                <div>
+                  <h3 className="text-lg font-bold text-gray-800 mb-3">
+                    <span className="border-b-4 border-[#004a93] pb-1">
+                      Piè
+                    </span>
+                    ces Jointes
+                  </h3>
+                  <p className="text-gray-600 italic">
+                    Aucune pièce avec cette annonce
+                  </p>
+                </div>
+              );
+            }
+
+            return (
+              <div className="mb-6 md:mb-0">
+                <h3 className="text-lg font-bold text-gray-800 mb-3">
+                  <span className="border-b-4 border-[#004a93] pb-1">Piè</span>
+                  ces Jointes
+                </h3>
+                {nonImageFiles.map((file, index) => (
                   <Link
                     key={index}
                     to={file.path}
@@ -120,8 +139,9 @@ const ContentGenerale = ({ newsItem }) => {
                     {file.label || `Attachment ${index + 1}`}
                   </Link>
                 ))}
-            </div>
-          )}
+              </div>
+            );
+          })()}
 
           <div>
             <h3 className="text-lg font-bold text-gray-800 mb-3  pb-2">
