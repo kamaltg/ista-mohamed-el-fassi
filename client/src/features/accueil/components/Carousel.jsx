@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRef, useState } from "react";
 
-export default function Carousel({ slides }) {
+function Carousel({ slides }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -94,3 +94,5 @@ export default function Carousel({ slides }) {
     </div>
   );
 }
+
+export default Carousel;

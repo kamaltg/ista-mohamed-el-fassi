@@ -1,5 +1,5 @@
 import { RevealOnScroll, zoomIn } from "@/animations";
-import bgImage from "@/assets/images/academic-cap-view.jpg";
+import bgImage from "@/features/accueil/assets/academic-cap-view.jpg";
 import Container from "@/layouts/Container";
 import { Fragment } from "react";
 

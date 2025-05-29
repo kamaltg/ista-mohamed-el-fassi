@@ -34,7 +34,7 @@ function ScrollToTop({ top = 500, smooth = true }) {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="bg-gray/20 hover:bg-gray/50 fixed right-10 bottom-10 z-3 size-10 cursor-pointer rounded-md border-none p-1 text-white shadow-md"
+            className="bg-gray/20 hover:bg-gray/50 fixed bottom-5 left-5 z-3 size-10 cursor-pointer rounded-md border-none p-1 text-white shadow-md"
             onClick={() => scrollToTop(smooth)}
             aria-label="Scroll to top">
             <svg

@@ -20,7 +20,7 @@ function Navbar() {
   }, [isDesktop]);
 
   return (
-    <nav>
+    <nav className="bg-neutral-100">
       <Container>
         <div className="flex items-center justify-between gap-4 py-6">
           {isVeryNarrow ? <LogoVertical /> : <LogoHorizontal />}

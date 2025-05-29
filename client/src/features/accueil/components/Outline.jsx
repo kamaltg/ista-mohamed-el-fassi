@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 const images = [
-  "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   "https://www.sinpress.ma/wp-content/uploads/2023/06/inbound1940487853019975535.jpg",
   "https://static.lematin.ma/files/lematin/images/articles/2017/12/f29de8bdd60686a1befa99908ef749d6.jpg",
 ];
@@ -49,7 +49,7 @@ function Outline() {
           </div>
 
           <div className="group flex w-fit items-center gap-1 self-end text-2xl font-bold">
-            <Link to="#">La suite</Link>
+            <Link to="/presentation-etablissement">La suite</Link>
             <FontAwesomeIcon
               className="group-hover:translate-x-1.5"
               icon={faChevronRight}

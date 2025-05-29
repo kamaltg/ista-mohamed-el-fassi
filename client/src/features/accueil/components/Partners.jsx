@@ -29,12 +29,12 @@ function Partners() {
   return (
     <Container>
       <SectionHeading heading=" Nos partenaires" icon={<IoIosBusiness />} />
-      <div className="inline-flex w-full flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_green_128px,_green_calc(100%-200px),transparent_100%)] py-5">
-        <ul className="animate-infinite-scroll flex items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8">
+      <div className="group inline-flex w-full flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_green_128px,_green_calc(100%-200px),transparent_100%)] py-5">
+        <ul className="animate-infinite-scroll flex items-center justify-center group-hover:[animation-play-state:paused] md:justify-start [&_img]:max-w-none [&_li]:mx-8">
           {companies.map((company, index) => (
             <li key={index}>
               <img
-                className="grayscale filter transition duration-300 hover:grayscale-0"
+                className="grayscale filter transition-colors duration-300 hover:grayscale-0"
                 width="210px"
                 src={company.logo}
                 alt={company.name}
@@ -43,12 +43,12 @@ function Partners() {
           ))}
         </ul>
         <ul
-          className="animate-infinite-scroll flex items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
+          className="animate-infinite-scroll flex items-center justify-center group-hover:[animation-play-state:paused] md:justify-start [&_img]:max-w-none [&_li]:mx-8"
           aria-hidden="true">
           {companies.map((company, index) => (
             <li key={index}>
               <img
-                className="grayscale filter transition duration-300 hover:grayscale-0"
+                className="grayscale filter transition-colors duration-300 hover:grayscale-0"
                 width="210px"
                 src={company.logo}
                 alt={company.name}

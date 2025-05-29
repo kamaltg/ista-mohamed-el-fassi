@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
+import { FaChevronDown } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 
 function DesktopDropdown({ children, label, dropdown }) {
@@ -15,9 +16,11 @@ function DesktopDropdown({ children, label, dropdown }) {
       onMouseLeave={() => setIsOpen(false)}
       className="relative cursor-default">
       <div className="relative">
-        <h3 className={`${isActive ? "text-green" : "text-blue"} font-bold`}>
+        <button
+          className={`${isActive ? "text-green" : "text-blue"} flex items-center justify-center gap-2 font-bold`}>
           {label}
-        </h3>
+          <FaChevronDown className="text-xs" />
+        </button>
         <span
           style={{ transform: isOpen ? "scaleX(1)" : "scaleX(0)" }}
           className="bg-blue absolute -right-2 -bottom-2 -left-2 h-1 origin-left rounded-full transition-transform duration-300 ease-out"

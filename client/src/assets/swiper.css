@@ -25,7 +25,7 @@
     background: #ededed;
     background: linear-gradient(
       -90deg,
-      rgba(220, 220, 220, 0.3) 0%,
+      rgba(0, 0, 0, 0.2) 0%,
       rgba(255, 255, 255, 0) 100%
     );
 
@@ -36,7 +36,7 @@
     background: #ededed;
     background: linear-gradient(
       90deg,
-      rgba(220, 220, 220, 0.3) 0%,
+      rgba(0, 0, 0, 0.2) 0%,
       rgba(255, 255, 255, 0) 100%
     );
 

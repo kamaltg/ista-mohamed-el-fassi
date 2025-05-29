@@ -37,9 +37,7 @@
   --color-green: #00904a;
   --color-gray: #a4a3a3;
 
-  /* breakpoints */
-  /* Removes the 2xl breakpoint from container */
-  /* --breakpoint-2xl: initial; */
+  --color-lightblue: #f0f5fa;
 }
 
 @layer base {

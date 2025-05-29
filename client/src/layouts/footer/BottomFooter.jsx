@@ -31,8 +31,8 @@ function BottomFooter() {
             </span>
             .
           </span>
-          <div className="mt-4 flex space-x-4 sm:justify-center lg:mt-0">
-            <Link to="#">Plan de site</Link>
+          <div className="mt-4 mr-60 flex space-x-4 hover:underline sm:justify-center lg:mt-0">
+            <Link to="/plan-de-site">Plan de site</Link>
           </div>
         </div>
       </Container>

@@ -8,35 +8,35 @@
     "dropdown": [
       {
         "label": "Présentation de l'établissement",
-        "href": "#"
+        "href": "/presentation-etablissement"
       },
       {
         "label": "Historique",
-        "href": "#"
+        "href": "/historique"
       },
       {
         "label": "Mot de la direction",
-        "href": "#"
+        "href": "/mot-de-direteur"
       },
       {
         "label": "Staff administratif",
-        "href": "#"
+        "href": "/staff-administratifs"
       },
       {
         "label": "Corps enseignants",
-        "href": "#"
+        "href": "/corps-enseignants"
       },
       {
         "label": "Ambassadors",
-        "href": "#"
+        "href": "/ambassadors"
       },
       {
         "label": "Chiffres clés",
-        "href": "#"
+        "href": "/chiffres-cles"
       },
       {
         "label": "Visite virtuelle",
-        "href": "#"
+        "href": "/visite-virtuelle"
       }
     ]
   },
@@ -45,7 +45,7 @@
     "dropdown": [
       {
         "label": "Formations disponibles",
-        "href": "#"
+        "href": "/formation-disponible"
       },
       {
         "label": "Cours du soir",
@@ -62,11 +62,11 @@
     "dropdown": [
       {
         "label": "Tous les actualités",
-        "href": "#"
+        "href": "/actualites"
       },
       {
         "label": "Appel d’offres",
-        "href": "#"
+        "href": "/appel-offres"
       },
       {
         "label": "Evénements",
@@ -79,7 +79,7 @@
     "dropdown": [
       {
         "label": "Emploi du temps",
-        "href": "#"
+        "href": "/emploi-du-temps"
       },
       {
         "label": "Planning d’examen",
@@ -111,10 +111,6 @@
     "label": "ESPACE ENTREPRISE",
     "dropdown": [
       {
-        "label": "Déposer vos offres d’emploi",
-        "href": "#"
-      },
-      {
         "label": "Déposer vos offres",
         "href": "#"
       },
@@ -140,5 +136,10 @@
         "href": "#"
       }
     ]
+  },
+  {
+    "label": "Plan de site",
+    "hidden": true,
+    "href": "/plan-de-site"
   }
 ]
