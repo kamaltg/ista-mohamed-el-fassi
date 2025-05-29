@@ -15,11 +15,15 @@ import FormationDisponible from "./Formation/FormationDisponible";
 import EmploiDeTemps from "./EspaceStagiaires/EmploiDeTemps";
 import PageDetaileActualite from "./ACTUALITÉS/detailActualite";
 import DetailsFiliere from "./Formation/DetailsFiliere";
+import AddNewsForm from "./Admin/create-actualite";
+import AddTag from "./Admin/Tagspage";
 function RoutesMyApp() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<AccueilPage />} />
+        <Route path="/Admins/Actualite/create" element={<AddNewsForm />} />
+        <Route path="/Admins/Actualite/createTag" element={<AddTag />} />
         <Route path="/nos-connaitre">
           <Route
             path="Presentation de l’etablissement"

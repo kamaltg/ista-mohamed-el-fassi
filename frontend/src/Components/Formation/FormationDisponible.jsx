@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Header from "../Components-home-page/Header";
 import Footer from "../Components-home-page/Footer";
 import imageHeading from "../../assets/images/Formation/HeadPage.png";
@@ -178,42 +179,46 @@ const FormationRecherche = () => {
 // Card Presentation des FILIERES
 const CardFiliere = ({ Information }) => {
   return (
-    <div className="max-w-sm w-[320px] p-5 bg-white rounded-xl shadow border h-auto flex flex-col gap-5">
-      <h2 className="text-2xl font-bold text-black leading-tight">
-        {Information.title}
-      </h2>
+    <>
+      <Link className='cursor' to={"/Formation/Formations Disponibles/"+Information.title}>
+        <div className="max-w-sm w-[320px] p-5 bg-white rounded-xl shadow border h-auto flex flex-col gap-5 min-h-[350px]">
+          <h2 className="text-2xl font-bold text-black leading-tight">
+            {Information.title}
+          </h2>
 
-      <div className="mt-4 space-y-4">
-        <div className="flex items-center bg-gray-200 rounded-md px-3 py-2">
-          <FaUser className="mr-2 text-gray-600" />
-          <span className="text-sm font-medium text-gray-800">
-            {Information.type}
-          </span>
-        </div>
+          <div className="mt-4 space-y-4">
+            <div className="flex items-center bg-gray-200 rounded-md px-3 py-2">
+              <FaUser className="mr-2 text-gray-600" />
+              <span className="text-sm font-medium text-gray-800">
+                {Information.type}
+              </span>
+            </div>
 
-        <div className="flex items-center bg-green-100 rounded-md px-3 py-2">
-          <FaClock className="mr-2 text-green-600" />
-          <span className="text-sm font-medium text-green-800">
-            {Information.mode}
-          </span>
-        </div>
+            <div className="flex items-center bg-green-100 rounded-md px-3 py-2">
+              <FaClock className="mr-2 text-green-600" />
+              <span className="text-sm font-medium text-green-800">
+                {Information.mode}
+              </span>
+            </div>
 
-        <div className="flex items-center bg-blue-200 rounded-md px-3 py-2">
-          <FaGraduationCap className="mr-2 text-blue-900" />
-          <span className="text-sm font-medium text-blue-900">
-            {Information.certification}
-          </span>
-        </div>
-        {!!Information.troncCommun && (
-          <div className="flex items-center bg-blue-100 rounded-md px-3 py-2">
-            <FaStream className="mr-2 text-blue-700" />
-            <span className="text-sm font-medium text-blue-700">
-              Tronc commun
-            </span>
+            <div className="flex items-center bg-blue-200 rounded-md px-3 py-2">
+              <FaGraduationCap className="mr-2 text-blue-900" />
+              <span className="text-sm font-medium text-blue-900">
+                {Information.certification}
+              </span>
+            </div>
+            {!!Information.troncCommun && (
+              <div className="flex items-center bg-blue-100 rounded-md px-3 py-2">
+                <FaStream className="mr-2 text-blue-700" />
+                <span className="text-sm font-medium text-blue-700">
+                  Tronc commun
+                </span>
+              </div>
+            )}
           </div>
-        )}
-      </div>
-    </div>
+        </div>
+      </Link>
+    </>
   );
 };
 
@@ -377,8 +382,10 @@ export function BodyPage() {
         <FormationRecherche />
         <div className="py-7">
           <h1 className="text-3xl font-bold text-[#004a93] mb-6  pb-2">
-            <span className="border-b-4 border-[#004a93] ">{formations.length} </span>filières
-            trouvées
+            <span className="border-b-4 border-[#004a93] ">
+              {formations.length}{" "}
+            </span>
+            filières trouvées
           </h1>
           {/* Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 // section de top-bar
 function TopBar() {
   return (
-    <div className="fixed top-0 right-0 w-full h-[40px] bg-[#a4a3a3] text-white z-50">
+    <div className="top-0 right-0 w-full h-[40px] bg-[#a4a3a3] text-white z-50">
       <ul className="flex justify-end items-center gap-5 h-full pr-5">
         <li className="p-1">
           <Link

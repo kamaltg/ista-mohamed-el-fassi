@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import Header from "../Components-home-page/Header";
 import Footer from "../Components-home-page/Footer";
 // images
@@ -26,32 +27,83 @@ function HeadingPage() {
     </div>
   );
 }
-// section creation d'actualite
-
-const ListActualités = Array(7).fill({
-  id:1,
-  title: "Ouverture des inscriptions pour l’année 2025-2026",
-  date: "8 mai 2025",
-  author: "Directeur",
-  views: "stagiaires, formateurs, événement",
-  text: "Les inscriptions pour la rentrée prochaine sont ouvertes du 1er mai au 15 juillet 2025. Les bacheliers et candidats à la formation professionnelle sont invités à soumettre leur dossier en ligne via notre plateforme.",
-  image: imgAcctualite,
-});
 
 const LesActualites = () => {
+  const [news, setNews] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
+  
+  const api = axios.create({
+  baseURL: "http://localhost:8000/api",
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  },
+});
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const response = await api.get("/gestionNewsIsta");
+        
+        // Formatage des données reçues
+        const formattedNews = response.data.map(item => ({
+          ...item,
+          // Normalise les tags dans les deux formats possibles
+          tags: Array.isArray(item.tags) 
+            ? item.tags.map(t => t.name || t)
+            : []
+        }));
 
-  const totalPages = Math.ceil(ListActualités.length / itemsPerPage);
+        setNews(formattedNews);
+      } catch (err) {
+        setError(err.response?.data?.message || err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchNews();
+  }, []);
+
+  const formatDate = (dateString) => {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString('fr-FR', options);
+  };
+
+  const getTagsString = (tags) => {
+    // console.log(tags)
+    return tags.map(tag => tag).join(", ");
+  };
+  
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-64">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+        Erreur lors du chargement des actualités: {error}
+      </div>
+    );
+  }
+
+  const totalPages = Math.ceil(news.length / itemsPerPage);
   const start = (currentPage - 1) * itemsPerPage;
-  const currentItems = ListActualités.slice(start, start + itemsPerPage);
+  const currentItems = news.slice(start, start + itemsPerPage);
 
   return (
     <div className="p-4 grid gap-8">
-      {currentItems.map((Actualité, index) => (
-        <div key={index} className="flex flex-col md:flex-row border-b pb-6">
+      {console.log(currentItems)}
+      {currentItems.map((actualite) => (
+        <div key={actualite.id} className="flex flex-col md:flex-row border-b pb-6">
           <img
-            src={Actualité.image}
+            src={actualite.image || imgAcctualite}
             alt="Actualité"
             className="w-full md:w-1/3 h-auto object-cover rounded"
           />
@@ -59,23 +111,27 @@ const LesActualites = () => {
             <div className="flex gap-7 mb-3">
               <div className="flex items-center text-sm text-gray-500 gap-1">
                 <img src={iconeDate} alt="calendar" className="w-4 h-4" />
-                <span>{Actualité.date}</span>
+                <span>{formatDate(actualite.created_at)}</span>
               </div>
               <div className="flex items-center text-sm text-gray-500 gap-1">
-                <img src={iconePinterer} alt="views" className="w-4 h-4" />
-                <span>{Actualité.views}</span>
+                <img src={iconePinterer} alt="views" className="w-4 h-4" />                
+                <span>{getTagsString(actualite.tags)}</span>
               </div>
               <div className="flex items-center text-sm text-gray-500 gap-1">
                 <img src={iconeAuthor} alt="author" className="w-4 h-4" />
-                <span>{Actualité.author}</span>
+                <span>Administration</span>
               </div>
             </div>
-            <h2 className="text-3xl font-bold text-[#004a93] ">
-              {Actualité.title}
+            <h2 className="text-3xl font-bold text-[#004a93]">
+              {actualite.title}
             </h2>
-            <p className="text-[#a4a3a3] mt-2">{Actualité.text}</p>
+            <p className="text-[#a4a3a3] mt-2">
+              {actualite.content.length > 150 
+                ? `${actualite.content.substring(0, 150)}...` 
+                : actualite.content}
+            </p>
             <Link
-              to={"/ACTUALITES/Actualités/"+Actualité.id}
+              to={`/ACTUALITES/Actualités/${actualite.id}`}
               className="text-[#00904a] font-semibold hover:underline mt-5 inline-block">
               Continuer la lecture →
             </Link>
@@ -84,38 +140,41 @@ const LesActualites = () => {
       ))}
 
       {/* Pagination */}
-      <div className="flex justify-center mt-8 space-x-2 p-5">
-        <button
-          onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
-          className="px-3 py-1 rounded bg-[#004a93] text-white text-sm disabled:opacity-50"
-          disabled={currentPage === 1}>
-          Précédent
-        </button>
-        {Array.from({ length: totalPages }, (_, i) => (
+      {totalPages > 1 && (
+        <div className="flex justify-center mt-8 space-x-2 p-5">
           <button
-            key={i}
-            onClick={() => setCurrentPage(i + 1)}
-            className={`px-3 py-1 rounded text-sm ${
-              currentPage === i + 1
-                ? "bg-[#00904a] text-white"
-                : "bg-gray-200 text-gray-700"
-            }`}>
-            {i + 1}
+            onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+            className="px-3 py-1 rounded bg-[#004a93] text-white text-sm disabled:opacity-50"
+            disabled={currentPage === 1}>
+            Précédent
           </button>
-        ))}
-        <button
-          onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
-          className="px-3 py-1 rounded bg-[#004a93] text-white text-sm disabled:opacity-50"
-          disabled={currentPage === totalPages}>
-          Suivant
-        </button>
-      </div>
+          {Array.from({ length: totalPages }, (_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentPage(i + 1)}
+              className={`px-3 py-1 rounded text-sm ${
+                currentPage === i + 1
+                  ? "bg-[#00904a] text-white"
+                  : "bg-gray-200 text-gray-700"
+              }`}>
+              {i + 1}
+            </button>
+          ))}
+          <button
+            onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+            className="px-3 py-1 rounded bg-[#004a93] text-white text-sm disabled:opacity-50"
+            disabled={currentPage === totalPages}>
+            Suivant
+          </button>
+        </div>
+      )}
     </div>
   );
 };
-// Body Page
 
 export function BodyPage() {
+  const [searchTerm, setSearchTerm] = useState("");
+
   return (
     <>
       <HeadingPage />
@@ -125,6 +184,8 @@ export function BodyPage() {
             <input
               type="text"
               placeholder="Rechercher..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-4 pr-10 py-2 rounded-full bg-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-[#004a93]"
             />
             <img
@@ -139,7 +200,7 @@ export function BodyPage() {
     </>
   );
 }
-// full page Content
+
 function Actualités() {
   return (
     <>
