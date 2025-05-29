@@ -19,7 +19,7 @@ function HeadingPage() {
         backgroundImage: `linear-gradient(to right, rgba(0, 59, 139, 0.9), rgba(0, 59, 139, 0.4), rgba(0,0,0,0)), url(${imageHeading})`,
       }}>
       <div className="absolute inset-0 flex flex-col justify-center pl-10 gap-4 text-white">
-        <span className="text-sm uppercase  border-l-4 border-[#00904a]  ps-2 ">
+        <span className="text-sm uppercase border-l-4 border-[#00904a] ps-2">
           ACTUALITÉS
         </span>
         <h1 className="text-3xl font-bold">Actualités</h1>
@@ -28,7 +28,7 @@ function HeadingPage() {
   );
 }
 
-const LesActualites = () => {
+const LesActualites = ({ searchTerm }) => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -36,21 +36,20 @@ const LesActualites = () => {
   const itemsPerPage = 6;
   
   const api = axios.create({
-  baseURL: "http://localhost:8000/api",
-  headers: {
-    "Content-Type": "application/json",
-    Accept: "application/json",
-  },
-});
+    baseURL: "http://localhost:8000/api",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  });
+
   useEffect(() => {
     const fetchNews = async () => {
       try {
         const response = await api.get("/gestionNewsIsta");
         
-        // Formatage des données reçues
         const formattedNews = response.data.map(item => ({
           ...item,
-          // Normalise les tags dans les deux formats possibles
           tags: Array.isArray(item.tags) 
             ? item.tags.map(t => t.name || t)
             : []
@@ -72,11 +71,34 @@ const LesActualites = () => {
     return new Date(dateString).toLocaleDateString('fr-FR', options);
   };
 
+  const formatDateForSearch = (dateString) => {
+    const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString('fr-FR', options);
+  };
+
   const getTagsString = (tags) => {
-    // console.log(tags)
     return tags.map(tag => tag).join(", ");
   };
-  
+
+  const removeAccents = (str) => {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  };
+
+  const filteredNews = news.filter(actualite => {
+    const searchLower = searchTerm.toLowerCase();
+    const searchNoAccents = removeAccents(searchLower);
+    
+    return (
+      removeAccents(actualite.title.toLowerCase()).includes(searchNoAccents) ||
+      removeAccents(getTagsString(actualite.tags).toLowerCase()).includes(searchNoAccents) ||
+      formatDateForSearch(actualite.created_at).includes(searchTerm)
+    );
+  });
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm]);
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
@@ -93,54 +115,61 @@ const LesActualites = () => {
     );
   }
 
-  const totalPages = Math.ceil(news.length / itemsPerPage);
+  const totalPages = Math.ceil(filteredNews.length / itemsPerPage);
   const start = (currentPage - 1) * itemsPerPage;
-  const currentItems = news.slice(start, start + itemsPerPage);
+  const currentItems = filteredNews.slice(start, start + itemsPerPage);
 
   return (
     <div className="p-4 grid gap-8">
-      {console.log(currentItems)}
-      {currentItems.map((actualite) => (
-        <div key={actualite.id} className="flex flex-col md:flex-row border-b pb-6">
-          <img
-            src={actualite.image || imgAcctualite}
-            alt="Actualité"
-            className="w-full md:w-1/3 h-auto object-cover rounded"
-          />
-          <div className="flex flex-col gap-2 md:ml-7 mt-5 md:mt-2 w-[650px]">
-            <div className="flex gap-7 mb-3">
-              <div className="flex items-center text-sm text-gray-500 gap-1">
-                <img src={iconeDate} alt="calendar" className="w-4 h-4" />
-                <span>{formatDate(actualite.created_at)}</span>
-              </div>
-              <div className="flex items-center text-sm text-gray-500 gap-1">
-                <img src={iconePinterer} alt="views" className="w-4 h-4" />                
-                <span>{getTagsString(actualite.tags)}</span>
-              </div>
-              <div className="flex items-center text-sm text-gray-500 gap-1">
-                <img src={iconeAuthor} alt="author" className="w-4 h-4" />
-                <span>Administration</span>
-              </div>
-            </div>
-            <h2 className="text-3xl font-bold text-[#004a93]">
-              {actualite.title}
-            </h2>
-            <p className="text-[#a4a3a3] mt-2">
-              {actualite.content.length > 150 
-                ? `${actualite.content.substring(0, 150)}...` 
-                : actualite.content}
-            </p>
-            <Link
-              to={`/ACTUALITES/Actualités/${actualite.id}`}
-              className="text-[#00904a] font-semibold hover:underline mt-5 inline-block">
-              Continuer la lecture →
-            </Link>
-          </div>
+      {filteredNews.length === 0 ? (
+        <div className="text-center py-10">
+          <p className="text-gray-500">Aucune actualité ne correspond à votre recherche.</p>
         </div>
-      ))}
+      ) : (
+        currentItems.map((actualite) => (
+          <div key={actualite.id} className="flex flex-col md:flex-row border-b pb-6">
+            <img
+              src={actualite.image || imgAcctualite}
+              alt="Actualité"
+              className="w-full md:w-1/3 h-auto object-cover rounded"
+              onError={(e) => {
+                e.target.src = imgAcctualite;
+              }}
+            />
+            <div className="flex flex-col gap-2 md:ml-7 mt-5 md:mt-2 w-[650px]">
+              <div className="flex gap-7 mb-3">
+                <div className="flex items-center text-sm text-gray-500 gap-1">
+                  <img src={iconeDate} alt="calendar" className="w-4 h-4" />
+                  <span>{formatDate(actualite.created_at)}</span>
+                </div>
+                <div className="flex items-center text-sm text-gray-500 gap-1">
+                  <img src={iconePinterer} alt="views" className="w-4 h-4" />                
+                  <span>{getTagsString(actualite.tags)}</span>
+                </div>
+                <div className="flex items-center text-sm text-gray-500 gap-1">
+                  <img src={iconeAuthor} alt="author" className="w-4 h-4" />
+                  <span>Administration</span>
+                </div>
+              </div>
+              <h2 className="text-3xl font-bold text-[#004a93]">
+                {actualite.title}
+              </h2>
+              <p className="text-[#a4a3a3] mt-2">
+                {actualite.content.length > 150 
+                  ? `${actualite.content.substring(0, 150)}...` 
+                  : actualite.content}
+              </p>
+              <Link
+                to={`/ACTUALITES/Actualités/${actualite.id}`}
+                className="text-[#00904a] font-semibold hover:underline mt-5 inline-block">
+                Continuer la lecture →
+              </Link>
+            </div>
+          </div>
+        ))
+      )}
 
-      {/* Pagination */}
-      {totalPages > 1 && (
+      {totalPages > 1 && filteredNews.length > 0 && (
         <div className="flex justify-center mt-8 space-x-2 p-5">
           <button
             onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
@@ -178,12 +207,12 @@ export function BodyPage() {
   return (
     <>
       <HeadingPage />
-      <div className="container mx-auto p-6 ">
+      <div className="container mx-auto p-6">
         <div className="flex justify-end mt-5">
-          <div className="relative min-w-[300px] max-w-md ">
+          <div className="relative min-w-[300px] max-w-md">
             <input
               type="text"
-              placeholder="Rechercher..."
+              placeholder="Rechercher par titre, tag ou date..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-4 pr-10 py-2 rounded-full bg-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-[#004a93]"
@@ -195,7 +224,7 @@ export function BodyPage() {
             />
           </div>
         </div>
-        <LesActualites />
+        <LesActualites searchTerm={searchTerm} />
       </div>
     </>
   );

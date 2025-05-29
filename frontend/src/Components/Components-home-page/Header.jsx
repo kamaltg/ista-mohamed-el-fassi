@@ -265,13 +265,13 @@ function NavBar() {
                   Chiffres clés
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/nos-connaitre/notre-mission"
                   className="block px-4 py-2 text-sm hover:text-[#00904a] text-sm hover:text-[#00904a]">
                   Notre mission
                 </Link>
-              </li>
+              </li> */}
             </ul>
           )}
         </li>
@@ -416,13 +416,13 @@ function NavBar() {
                   Emplois du temps
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/stagiaire/absences"
                   className="block px-4 py-2 text-sm hover:text-[#00904a]">
                   Absences
                 </Link>
-              </li>
+              </li> */}
             </ul>
           )}
         </li>
