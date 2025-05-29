@@ -21,7 +21,7 @@ function RoutesMyApp() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<AccueilPage />} />
+        <Route index  element={<AccueilPage />} />
         <Route path="/Admins/Actualite/create" element={<AddNewsForm />} />
         <Route path="/Admins/Actualite/createTag" element={<AddTag />} />
         <Route path="/nos-connaitre">
