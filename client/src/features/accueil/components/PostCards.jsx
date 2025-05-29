@@ -13,7 +13,8 @@ function PostCards({ posts }) {
         keyboard={{ enabled: true }}
         breakpoints={{
           0: { slidesPerView: 1, slidesPerGroup: 1 },
-          768: { slidesPerView: 2, slidesPerGroup: 2 },
+          600: { slidesPerView: 2, slidesPerGroup: 2 },
+          // 768: { slidesPerView: 2, slidesPerGroup: 2 },
           1024: { slidesPerView: 3, slidesPerGroup: 3 },
         }}
         navigation={true}
@@ -22,10 +23,10 @@ function PostCards({ posts }) {
           clickable: true,
         }}
         modules={[Keyboard, Navigation, Pagination]}
-        className="recentPosts !pb-10 sm:!px-14 sm:!py-5" // push down the swiper content for pagination
+        className="recentPosts !pb-10 !pl-12 sm:!px-14" // push down the swiper content for pagination
       >
         {posts.map((post, index) => (
-          <SwiperSlide key={`post-${index}`} className="!max-w-80">
+          <SwiperSlide key={`post-${index}`}>
             <RecentPost post={post} />
           </SwiperSlide>
         ))}

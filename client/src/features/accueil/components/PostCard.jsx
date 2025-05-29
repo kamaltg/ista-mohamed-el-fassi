@@ -6,8 +6,10 @@ function PostCard({ post }) {
   return (
     <article
       key={`card-${post.index}`}
-      className="relative overflow-clip rounded-2xl shadow-lg/20">
-      <div className={`h-80 bg-[url(${post.image})] bg-cover bg-top`}>
+      className="relative max-w-sm overflow-clip rounded-2xl shadow-lg/20">
+      <div
+        className={`h-80 bg-cover bg-top`}
+        style={{ backgroundImage: `url(${post.image})` }}>
         <div
           className="bg-blue flex h-full flex-col justify-between px-4 py-8 text-white"
           style={{

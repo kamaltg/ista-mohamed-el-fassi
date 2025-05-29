@@ -11,7 +11,7 @@ const posts = [
     school: "ISTA 1",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
   {
     category: "vie stagiaires",
@@ -19,7 +19,7 @@ const posts = [
     school: "ISTA 2",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
   {
     category: "vie stagiaires",
@@ -27,7 +27,7 @@ const posts = [
     school: "ISTA 3",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
   {
     category: "vie stagiaires",
@@ -35,7 +35,7 @@ const posts = [
     school: "ISTA 4",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
   {
     category: "vie stagiaires",
@@ -43,7 +43,7 @@ const posts = [
     school: "ISTA MOHAMED EL FASSI ERRACHIDIA",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
   {
     category: "vie stagiaires",
@@ -51,7 +51,7 @@ const posts = [
     school: "ISTA MOHAMED EL FASSI ERRACHIDIA",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
   {
     category: "vie stagiaires",
@@ -59,7 +59,7 @@ const posts = [
     school: "ISTA MOHAMED EL FASSI ERRACHIDIA",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
   {
     category: "vie stagiaires",
@@ -67,7 +67,7 @@ const posts = [
     school: "ISTA MOHAMED EL FASSI ERRACHIDIA",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
   {
     category: "vie stagiaires",
@@ -75,7 +75,7 @@ const posts = [
     school: "ISTA MOHAMED EL FASSI ERRACHIDIA",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
   {
     category: "vie stagiaires",
@@ -83,7 +83,7 @@ const posts = [
     school: "ISTA MOHAMED EL FASSI ERRACHIDIA",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
   {
     category: "vie stagiaires",
@@ -91,7 +91,7 @@ const posts = [
     school: "ISTA MOHAMED EL FASSI ERRACHIDIA",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
   {
     category: "vie stagiaires",
@@ -99,7 +99,7 @@ const posts = [
     school: "ISTA MOHAMED EL FASSI ERRACHIDIA",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
   {
     category: "vie stagiaires",
@@ -107,7 +107,7 @@ const posts = [
     school: "ISTA MOHAMED EL FASSI ERRACHIDIA",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
   {
     category: "vie stagiaires",
@@ -115,7 +115,7 @@ const posts = [
     school: "ISTA MOHAMED EL FASSI ERRACHIDIA",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
   {
     category: "vie stagiaires",
@@ -123,7 +123,7 @@ const posts = [
     school: "ISTA MOHAMED EL FASSI ERRACHIDIA",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
   {
     category: "vie stagiaires",
@@ -131,7 +131,7 @@ const posts = [
     school: "ISTA MOHAMED EL FASSI ERRACHIDIA",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
   {
     category: "vie stagiaires",
@@ -139,7 +139,7 @@ const posts = [
     school: "ISTA MOHAMED EL FASSI ERRACHIDIA",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
   {
     category: "vie stagiaires",
@@ -147,7 +147,7 @@ const posts = [
     school: "ISTA MOHAMED EL FASSI ERRACHIDIA",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
   {
     category: "vie stagiaires",
@@ -155,7 +155,7 @@ const posts = [
     school: "ISTA MOHAMED EL FASSI ERRACHIDIA",
     date: "11/10/2025",
     image:
-      "https://scontent.frak4-2.fna.fbcdn.net/v/t39.30808-6/369689373_1258577938040750_6041276940304890478_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFJdgqQJeCtesi0u4w2Sg-ukRNGBU67RAmRE0YFTrtECbtWx3xOVivmvD5SPsnydgENMhVdnmzVnlyhZm_X-3gh&_nc_ohc=M1ZMgIfii_sQ7kNvwHWM0so&_nc_oc=Adm_wvzTOp9ovymKzOvYjIlKASSbnZ3cxs7a74kSpbLR7fhMApvkQPl6sAFM7IsC-RM&_nc_zt=23&_nc_ht=scontent.frak4-2.fna&_nc_gid=Ai-Ba_GtFMthiaSIrbkIOQ&oh=00_AfJr5oxzvTL0Bpnfpt2E_iN79jLbZ9bGw8jpk1Er5BbqjQ&oe=6834D3E4",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx93MSlEbYq6iWfZ52cVlmlkhXUsodqmAl2A&s",
   },
 ];
 
