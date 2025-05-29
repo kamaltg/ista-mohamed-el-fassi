@@ -2,10 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/ofppt.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/ofppt.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+      var botmanWidget = {
+        chatServer: "http://127.0.0.1:5501/botman", // Laravel API endpoint
+        frameEndpoint: "http://127.0.0.1:5501/botman/chat", // Full path to chat iframe
+        title: "Chat d'assistance",
+        introMessage: "👋 Bonjour ! Comment puis-je vous aider aujourd'hui ?",
+        mainColor: "#a4a3a3",
+        bubbleBackground: "#a4a3a3",
+        aboutText: "",
+        bubbleAvatarUrl:
+          "http://localhost:5173/ista-mohamed-el-fassi/icons/robot.svg",
+      };
+    </script>
+    <script src="/js/botman-widget.js"></script>
+
     <title>ISTA MOHAMED EL FASSI ERRACHIDIA</title>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
